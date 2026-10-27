@@ -149,7 +149,7 @@ export function registerYoutube(client: Client): void {
     }
   };
 
-  client.once("ready", () => {
+  client.once("clientReady", () => {
     void tick();
     setInterval(() => void tick(), intervalMs);
     console.log(`YouTube poller every ${minutes}m`);

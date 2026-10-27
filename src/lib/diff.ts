@@ -81,7 +81,16 @@ function findLiveByAliases(
   canonical: string,
   aliases: string[],
 ): { id: string; name: string } | undefined {
-  return liveNames.find((item) => matchesAny(item.name, canonical, aliases));
+  const canonicalNorm = normalizeName(canonical);
+  // Exact normalized equality only — never substring matches (e.g. "welcome-and-rules"
+  // must not bind to a channel named "rules").
+  const exact = liveNames.find((item) => normalizeName(item.name) === canonicalNorm);
+  if (exact) return exact;
+
+  const aliasNorms = new Set(
+    aliases.map(normalizeName).filter((a) => Boolean(a) && a !== canonicalNorm),
+  );
+  return liveNames.find((item) => aliasNorms.has(normalizeName(item.name)));
 }
 
 export function computeDiff(blueprint: ServerBlueprint, live: LiveStructure): StructureDiff {

@@ -4,9 +4,11 @@
 
 1. Open [Discord Developer Portal](https://discord.com/developers/applications) → **New Application**.
 2. Open **Bot** → **Add Bot** → copy the token → `DISCORD_TOKEN` in `.env`.
-3. Enable **Privileged Gateway Intents**:
-   - Server Members Intent
-   - Message Content Intent (for delete logging content; optional if you disable mod log)
+3. For the **runtime bot** (`npm start` / `npm run dev`), enable **Privileged Gateway Intents**:
+   - Server Members Intent (welcome + auto-role)
+   - Message Content Intent (mod-log deleted message content; optional if `ENABLE_MOD_LOG=false`)
+   
+   `inspect` / `dry-run` / `apply` only need the Guilds intent and work without privileged intents.
 4. Copy **Application ID** → `CLIENT_ID`.
 5. Copy your server ID (Discord → Settings → Advanced → Developer Mode → right-click server → Copy Server ID) → `GUILD_ID`.
 

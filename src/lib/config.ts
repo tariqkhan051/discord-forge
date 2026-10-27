@@ -30,6 +30,9 @@ export const config = {
   enableYoutube: envBool("ENABLE_YOUTUBE", true),
   enableModLog: envBool("ENABLE_MOD_LOG", true),
   enableAutoRole: envBool("ENABLE_AUTO_ROLE", true),
+  /** Privileged intents — must be enabled in Discord Developer Portal first */
+  enableMembersIntent: envBool("ENABLE_MEMBERS_INTENT", false),
+  enableMessageContentIntent: envBool("ENABLE_MESSAGE_CONTENT_INTENT", false),
   youtubePollMinutes: envInt("YOUTUBE_POLL_MINUTES", 15),
   newMemberRoleName: process.env.NEW_MEMBER_ROLE_NAME?.trim() || "New Member",
   memberRoleName: process.env.MEMBER_ROLE_NAME?.trim() || "Member",

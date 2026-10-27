@@ -57,7 +57,15 @@ const RULES_TEXT = [
 
 async function handleRoles(interaction: ChatInputCommandInteraction): Promise<void> {
   const blueprint = loadBlueprint();
-  const selfRoles = blueprint.roles.filter((r) => r.selfAssignable);
+  if (!interaction.guild) {
+    await interaction.reply({ content: "Guild only.", ephemeral: true });
+    return;
+  }
+  const resolved = blueprint.roles
+    .filter((r) => r.selfAssignable)
+    .map((r) => findRole(interaction.guild!, blueprint, r.name))
+    .filter((r): r is NonNullable<typeof r> => Boolean(r));
+
   const embed = new EmbedBuilder()
     .setColor(0x3498db)
     .setTitle("Game & community roles")
@@ -66,21 +74,21 @@ async function handleRoles(interaction: ChatInputCommandInteraction): Promise<vo
     );
 
   const row = new ActionRowBuilder<ButtonBuilder>();
-  for (const role of selfRoles.slice(0, 5)) {
+  for (const role of resolved.slice(0, 5)) {
     row.addComponents(
       new ButtonBuilder()
         .setCustomId(`role:${role.name}`)
-        .setLabel(role.name)
+        .setLabel(role.name.slice(0, 80))
         .setStyle(ButtonStyle.Secondary),
     );
   }
 
   const row2 = new ActionRowBuilder<ButtonBuilder>();
-  for (const role of selfRoles.slice(5, 10)) {
+  for (const role of resolved.slice(5, 10)) {
     row2.addComponents(
       new ButtonBuilder()
         .setCustomId(`role:${role.name}`)
-        .setLabel(role.name)
+        .setLabel(role.name.slice(0, 80))
         .setStyle(ButtonStyle.Secondary),
     );
   }

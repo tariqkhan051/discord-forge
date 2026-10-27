@@ -59,15 +59,10 @@ function bitsFromNames(names: string[]): bigint {
   return bits;
 }
 
+/** CLI setup only needs Guilds — avoids privileged-intent errors during inspect/dry-run/apply. */
 export async function withClient<T>(fn: (client: Client, guild: Guild) => Promise<T>): Promise<T> {
   const client = new Client({
-    intents: [
-      GatewayIntentBits.Guilds,
-      GatewayIntentBits.GuildMembers,
-      GatewayIntentBits.GuildMessages,
-      GatewayIntentBits.GuildModeration,
-      GatewayIntentBits.MessageContent,
-    ],
+    intents: [GatewayIntentBits.Guilds],
   });
 
   try {
