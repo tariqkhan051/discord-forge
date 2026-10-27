@@ -21,12 +21,17 @@ npm run dry-run    # show create/skip plan → reports/dry-run.md
 npm run apply      # create missing roles/categories/channels only
 ```
 
-### Runtime bot
+### Runtime bot (one-click on Windows)
+
+1. Ensure `.env` exists (copy from `.env.example` and fill tokens).
+2. Double-click **`Start GuardiansGuildX.bat`**  
+   - Or **`Start GuardiansGuildX (background).vbs`** for a minimized window.
+3. Leave that window open while the bot should stay online.
 
 ```bash
-npm run register-commands
-npm run resolve-youtube   # fills YOUTUBE_CHANNEL_ID hint
-npm start                 # or: npm run dev
+npm run register-commands   # once after adding slash commands
+npm run resolve-youtube     # once to fill YOUTUBE_CHANNEL_ID
+npm run dev                 # same as the .bat launcher
 ```
 
 ## Docs

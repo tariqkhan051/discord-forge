@@ -13,7 +13,9 @@
     "apply": "tsx src/cli.ts apply",
     "register-commands": "tsx src/register-commands.ts",
     "resolve-youtube": "tsx src/scripts/resolve-youtube-id.ts",
-    "smoke": "tsx src/scripts/offline-diff-smoke.ts"
+    "smoke": "tsx src/scripts/offline-diff-smoke.ts",
+    "purge-bots": "tsx src/scripts/purge-bot-messages.ts",
+    "purge-bots:execute": "tsx src/scripts/purge-bot-messages.ts --execute"
   },
   "engines": {
     "node": ">=18"
