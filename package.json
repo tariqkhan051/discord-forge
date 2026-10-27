@@ -1,0 +1,32 @@
+{
+  "name": "discord-forge",
+  "version": "1.0.0",
+  "description": "Guardians Guild Discord setup bot — inspect, dry-run, and apply a gaming community structure",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "inspect": "tsx src/cli.ts inspect",
+    "dry-run": "tsx src/cli.ts dry-run",
+    "apply": "tsx src/cli.ts apply",
+    "register-commands": "tsx src/register-commands.ts",
+    "resolve-youtube": "tsx src/scripts/resolve-youtube-id.ts",
+    "smoke": "tsx src/scripts/offline-diff-smoke.ts"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.7",
+    "fast-xml-parser": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}

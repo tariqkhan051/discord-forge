@@ -1,0 +1,587 @@
+{
+  "name": "Guardians Guild Gaming Community",
+  "version": "1.0.0",
+  "aliases": {
+    "community-chat": [
+      "community-chat",
+      "general-chat",
+      "general",
+      "chat"
+    ],
+    "welcome": ["welcome", "welcome-and-rules", "start-here"],
+    "announcements": ["announcements", "announce", "news"],
+    "rules": ["rules", "server-rules", "guidelines"],
+    "introduce-yourself": ["introduce-yourself", "introductions", "intros"],
+    "polls-and-votes": ["polls-and-votes", "polls", "votes"],
+    "gaming-chat": ["gaming-chat", "games", "game-chat"],
+    "looking-for-squad": ["looking-for-squad", "lfs", "lfg", "looking-for-group"],
+    "party-up": ["party-up", "party"],
+    "gaming-memes": ["gaming-memes", "memes"],
+    "clips-and-highlights": ["clips-and-highlights", "clips", "highlights"],
+    "screenshots-and-gameplay": ["screenshots-and-gameplay", "screenshots", "gameplay"],
+    "mlbb-chat": ["mlbb-chat", "mlbb", "mobile-legends"],
+    "mlbb-ranked": ["mlbb-ranked", "ml-ranked"],
+    "mlbb-team-up": ["mlbb-team-up", "mlbb-lfg"],
+    "mlbb-builds-and-guides": ["mlbb-builds-and-guides", "mlbb-guides", "mlbb-builds"],
+    "mlbb-clips": ["mlbb-clips"],
+    "cs2-chat": ["cs2-chat", "cs2", "csgo"],
+    "cs2-looking-for-team": ["cs2-looking-for-team", "cs2-lft", "cs2-lfg"],
+    "cs2-clips": ["cs2-clips"],
+    "rivals-chat": ["rivals-chat", "marvel-rivals", "marvel-rivals-chat"],
+    "rivals-looking-for-team": ["rivals-looking-for-team", "rivals-lft", "rivals-lfg"],
+    "rivals-clips": ["rivals-clips"],
+    "youtube-updates": ["youtube-updates", "youtube", "yt-updates"],
+    "new-videos": ["new-videos", "videos"],
+    "creator-chat": ["creator-chat", "creators"],
+    "video-suggestions": ["video-suggestions", "suggestions", "content-suggestions"],
+    "share-your-content": ["share-your-content", "content-share", "your-content"],
+    "facebook-updates": ["facebook-updates", "facebook"],
+    "instagram-updates": ["instagram-updates", "instagram", "ig"],
+    "staff-chat": ["staff-chat", "staff", "mods"],
+    "mod-logs": ["mod-logs", "modlogs", "logs"],
+    "admin": ["admin", "admin-chat"],
+    "Gaming Lounge 1": ["gaming-lounge-1", "gaming lounge 1", "lounge-1"],
+    "Gaming Lounge 2": ["gaming-lounge-2", "gaming lounge 2", "lounge-2"],
+    "Ranked Squad": ["ranked-squad", "ranked squad"],
+    "Chill and Talk": ["chill-and-talk", "chill and talk", "chill"],
+    "AFK": ["afk"],
+    "Admin": ["admin", "administrator", "admins"],
+    "Moderator": ["moderator", "mod", "mods"],
+    "Community Manager": ["community-manager", "community manager", "cm"],
+    "Content Creator": ["content-creator", "content creator", "creator"],
+    "VIP": ["vip"],
+    "Active Gamer": ["active-gamer", "active gamer"],
+    "Member": ["member", "members"],
+    "New Member": ["new-member", "new member", "newcomer"],
+    "MLBB Player": ["mlbb-player", "mlbb player", "mlbb"],
+    "CS2 Player": ["cs2-player", "cs2 player", "cs2"],
+    "Marvel Rivals": ["marvel-rivals", "marvel rivals", "rivals"],
+    "Ranked Player": ["ranked-player", "ranked player"],
+    "Casual Gamer": ["casual-gamer", "casual gamer"],
+    "Squad Finder": ["squad-finder", "squad finder"],
+    "YouTube Subscriber": ["youtube-subscriber", "youtube subscriber", "yt-sub"]
+  },
+  "roles": [
+    {
+      "id": "admin",
+      "name": "Admin",
+      "color": "#E74C3C",
+      "hoist": true,
+      "mentionable": false,
+      "permissions": [
+        "ManageGuild",
+        "ManageChannels",
+        "ManageRoles",
+        "KickMembers",
+        "BanMembers",
+        "ModerateMembers",
+        "ManageMessages",
+        "ManageNicknames",
+        "ViewAuditLog",
+        "MentionEveryone"
+      ],
+      "staff": true
+    },
+    {
+      "id": "moderator",
+      "name": "Moderator",
+      "color": "#3498DB",
+      "hoist": true,
+      "mentionable": true,
+      "permissions": [
+        "KickMembers",
+        "ModerateMembers",
+        "ManageMessages",
+        "ManageNicknames",
+        "ViewAuditLog",
+        "MuteMembers",
+        "DeafenMembers",
+        "MoveMembers"
+      ],
+      "staff": true
+    },
+    {
+      "id": "community-manager",
+      "name": "Community Manager",
+      "color": "#9B59B6",
+      "hoist": true,
+      "mentionable": true,
+      "permissions": ["ManageMessages", "ManageEvents", "CreateEvents", "MentionEveryone"],
+      "staff": true
+    },
+    {
+      "id": "content-creator",
+      "name": "Content Creator",
+      "color": "#E67E22",
+      "hoist": true,
+      "mentionable": false,
+      "permissions": [],
+      "staff": false
+    },
+    {
+      "id": "vip",
+      "name": "VIP",
+      "color": "#F1C40F",
+      "hoist": true,
+      "mentionable": false,
+      "permissions": [],
+      "staff": false
+    },
+    {
+      "id": "active-gamer",
+      "name": "Active Gamer",
+      "color": "#2ECC71",
+      "hoist": false,
+      "mentionable": false,
+      "permissions": [],
+      "staff": false
+    },
+    {
+      "id": "member",
+      "name": "Member",
+      "color": "#95A5A6",
+      "hoist": false,
+      "mentionable": false,
+      "permissions": [],
+      "staff": false
+    },
+    {
+      "id": "new-member",
+      "name": "New Member",
+      "color": "#BDC3C7",
+      "hoist": false,
+      "mentionable": false,
+      "permissions": [],
+      "staff": false
+    },
+    {
+      "id": "mlbb-player",
+      "name": "MLBB Player",
+      "color": "#1ABC9C",
+      "hoist": false,
+      "mentionable": false,
+      "permissions": [],
+      "selfAssignable": true,
+      "staff": false
+    },
+    {
+      "id": "cs2-player",
+      "name": "CS2 Player",
+      "color": "#E67E22",
+      "hoist": false,
+      "mentionable": false,
+      "permissions": [],
+      "selfAssignable": true,
+      "staff": false
+    },
+    {
+      "id": "marvel-rivals",
+      "name": "Marvel Rivals",
+      "color": "#C0392B",
+      "hoist": false,
+      "mentionable": false,
+      "permissions": [],
+      "selfAssignable": true,
+      "staff": false
+    },
+    {
+      "id": "ranked-player",
+      "name": "Ranked Player",
+      "color": "#8E44AD",
+      "hoist": false,
+      "mentionable": false,
+      "permissions": [],
+      "selfAssignable": true,
+      "staff": false
+    },
+    {
+      "id": "casual-gamer",
+      "name": "Casual Gamer",
+      "color": "#16A085",
+      "hoist": false,
+      "mentionable": false,
+      "permissions": [],
+      "selfAssignable": true,
+      "staff": false
+    },
+    {
+      "id": "squad-finder",
+      "name": "Squad Finder",
+      "color": "#2980B9",
+      "hoist": false,
+      "mentionable": false,
+      "permissions": [],
+      "selfAssignable": true,
+      "staff": false
+    },
+    {
+      "id": "youtube-subscriber",
+      "name": "YouTube Subscriber",
+      "color": "#FF0000",
+      "hoist": false,
+      "mentionable": false,
+      "permissions": [],
+      "selfAssignable": true,
+      "staff": false
+    }
+  ],
+  "categories": [
+    {
+      "id": "welcome-and-info",
+      "name": "WELCOME AND INFO",
+      "channels": [
+        {
+          "id": "welcome",
+          "name": "welcome",
+          "type": "GuildText",
+          "topic": "Start here — welcome to Guardians Guild",
+          "permissionProfile": "readonly"
+        },
+        {
+          "id": "announcements",
+          "name": "announcements",
+          "type": "GuildText",
+          "topic": "Official server and community announcements",
+          "permissionProfile": "announce"
+        },
+        {
+          "id": "rules",
+          "name": "rules",
+          "type": "GuildText",
+          "topic": "Community rules — please read before chatting",
+          "permissionProfile": "readonly"
+        },
+        {
+          "id": "introduce-yourself",
+          "name": "introduce-yourself",
+          "type": "GuildText",
+          "topic": "Say hi — games you play, rank, and how you found us",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "community-chat",
+          "name": "community-chat",
+          "type": "GuildText",
+          "topic": "General hangout for the community",
+          "permissionProfile": "public",
+          "preferExistingAliases": true
+        },
+        {
+          "id": "polls-and-votes",
+          "name": "polls-and-votes",
+          "type": "GuildText",
+          "topic": "Community polls and voting",
+          "permissionProfile": "public"
+        }
+      ]
+    },
+    {
+      "id": "gaming-lounge",
+      "name": "GAMING LOUNGE",
+      "channels": [
+        {
+          "id": "gaming-chat",
+          "name": "gaming-chat",
+          "type": "GuildText",
+          "topic": "Talk games, patches, and what you are playing",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "looking-for-squad",
+          "name": "looking-for-squad",
+          "type": "GuildText",
+          "topic": "Find teammates — include game, mode, and region",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "party-up",
+          "name": "party-up",
+          "type": "GuildText",
+          "topic": "Quick party-up calls for the next match",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "gaming-memes",
+          "name": "gaming-memes",
+          "type": "GuildText",
+          "topic": "Clean gaming memes only",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "clips-and-highlights",
+          "name": "clips-and-highlights",
+          "type": "GuildText",
+          "topic": "Share your best plays and funny moments",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "screenshots-and-gameplay",
+          "name": "screenshots-and-gameplay",
+          "type": "GuildText",
+          "topic": "Screenshots and gameplay stills",
+          "permissionProfile": "public"
+        }
+      ]
+    },
+    {
+      "id": "mobile-legends",
+      "name": "MOBILE LEGENDS",
+      "channels": [
+        {
+          "id": "mlbb-chat",
+          "name": "mlbb-chat",
+          "type": "GuildText",
+          "topic": "Mobile Legends: Bang Bang discussion",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "mlbb-ranked",
+          "name": "mlbb-ranked",
+          "type": "GuildText",
+          "topic": "Ranked tips, climb updates, and drafts",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "mlbb-team-up",
+          "name": "mlbb-team-up",
+          "type": "GuildText",
+          "topic": "LFG for MLBB — rank, role, and server",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "mlbb-builds-and-guides",
+          "name": "mlbb-builds-and-guides",
+          "type": "GuildText",
+          "topic": "Builds, emblems, and hero guides",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "mlbb-clips",
+          "name": "mlbb-clips",
+          "type": "GuildText",
+          "topic": "MLBB clips and highlights",
+          "permissionProfile": "public"
+        }
+      ]
+    },
+    {
+      "id": "cs2",
+      "name": "CS2",
+      "channels": [
+        {
+          "id": "cs2-chat",
+          "name": "cs2-chat",
+          "type": "GuildText",
+          "topic": "Counter-Strike 2 discussion",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "cs2-looking-for-team",
+          "name": "cs2-looking-for-team",
+          "type": "GuildText",
+          "topic": "Find a CS2 stack — rank and preferred maps",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "cs2-clips",
+          "name": "cs2-clips",
+          "type": "GuildText",
+          "topic": "CS2 clips and ace moments",
+          "permissionProfile": "public"
+        }
+      ]
+    },
+    {
+      "id": "marvel-rivals",
+      "name": "MARVEL RIVALS",
+      "channels": [
+        {
+          "id": "rivals-chat",
+          "name": "rivals-chat",
+          "type": "GuildText",
+          "topic": "Marvel Rivals discussion",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "rivals-looking-for-team",
+          "name": "rivals-looking-for-team",
+          "type": "GuildText",
+          "topic": "Find a Marvel Rivals team",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "rivals-clips",
+          "name": "rivals-clips",
+          "type": "GuildText",
+          "topic": "Marvel Rivals clips",
+          "permissionProfile": "public"
+        }
+      ]
+    },
+    {
+      "id": "content-creator-hub",
+      "name": "CONTENT CREATOR HUB",
+      "channels": [
+        {
+          "id": "youtube-updates",
+          "name": "youtube-updates",
+          "type": "GuildText",
+          "topic": "Guardians Guild YouTube notifications",
+          "permissionProfile": "announce"
+        },
+        {
+          "id": "new-videos",
+          "name": "new-videos",
+          "type": "GuildText",
+          "topic": "New long-form and Shorts discussion",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "creator-chat",
+          "name": "creator-chat",
+          "type": "GuildText",
+          "topic": "Creators talking shop",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "video-suggestions",
+          "name": "video-suggestions",
+          "type": "GuildText",
+          "topic": "Suggest video ideas for Guardians Guild",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "share-your-content",
+          "name": "share-your-content",
+          "type": "GuildText",
+          "topic": "Share your own gaming content (no spam)",
+          "permissionProfile": "public"
+        },
+        {
+          "id": "facebook-updates",
+          "name": "facebook-updates",
+          "type": "GuildText",
+          "topic": "Facebook — https://www.facebook.com/GuardiansGuildX",
+          "permissionProfile": "announce"
+        },
+        {
+          "id": "instagram-updates",
+          "name": "instagram-updates",
+          "type": "GuildText",
+          "topic": "Instagram — https://www.instagram.com/guardiansguildx/",
+          "permissionProfile": "announce"
+        }
+      ]
+    },
+    {
+      "id": "voice",
+      "name": "VOICE",
+      "channels": [
+        {
+          "id": "gaming-lounge-1",
+          "name": "Gaming Lounge 1",
+          "type": "GuildVoice",
+          "userLimit": 5,
+          "permissionProfile": "voice"
+        },
+        {
+          "id": "gaming-lounge-2",
+          "name": "Gaming Lounge 2",
+          "type": "GuildVoice",
+          "userLimit": 5,
+          "permissionProfile": "voice"
+        },
+        {
+          "id": "ranked-squad",
+          "name": "Ranked Squad",
+          "type": "GuildVoice",
+          "userLimit": 5,
+          "permissionProfile": "voice"
+        },
+        {
+          "id": "chill-and-talk",
+          "name": "Chill and Talk",
+          "type": "GuildVoice",
+          "userLimit": 10,
+          "permissionProfile": "voice"
+        },
+        {
+          "id": "afk",
+          "name": "AFK",
+          "type": "GuildVoice",
+          "userLimit": 0,
+          "permissionProfile": "voice"
+        }
+      ]
+    },
+    {
+      "id": "staff",
+      "name": "STAFF",
+      "channels": [
+        {
+          "id": "staff-chat",
+          "name": "staff-chat",
+          "type": "GuildText",
+          "topic": "Private staff coordination",
+          "permissionProfile": "staff"
+        },
+        {
+          "id": "mod-logs",
+          "name": "mod-logs",
+          "type": "GuildText",
+          "topic": "Automated moderation logs",
+          "permissionProfile": "staff"
+        },
+        {
+          "id": "admin",
+          "name": "admin",
+          "type": "GuildText",
+          "topic": "Admin-only discussion",
+          "permissionProfile": "admin"
+        }
+      ]
+    }
+  ],
+  "permissionProfiles": {
+    "public": {
+      "everyone": {
+        "allow": ["ViewChannel", "SendMessages", "EmbedLinks", "AttachFiles", "AddReactions", "UseExternalEmojis", "ReadMessageHistory", "Connect", "Speak"],
+        "deny": ["MentionEveryone", "ManageMessages", "ManageChannels"]
+      }
+    },
+    "readonly": {
+      "everyone": {
+        "allow": ["ViewChannel", "ReadMessageHistory", "AddReactions"],
+        "deny": ["SendMessages", "MentionEveryone", "ManageMessages"]
+      },
+      "staffCanSend": true
+    },
+    "announce": {
+      "everyone": {
+        "allow": ["ViewChannel", "ReadMessageHistory", "AddReactions"],
+        "deny": ["SendMessages", "MentionEveryone", "ManageMessages"]
+      },
+      "staffCanSend": true
+    },
+    "voice": {
+      "everyone": {
+        "allow": ["ViewChannel", "Connect", "Speak", "UseVAD", "Stream"],
+        "deny": []
+      }
+    },
+    "staff": {
+      "everyone": {
+        "allow": [],
+        "deny": ["ViewChannel"]
+      },
+      "staffOnly": true
+    },
+    "admin": {
+      "everyone": {
+        "allow": [],
+        "deny": ["ViewChannel"]
+      },
+      "adminOnly": true
+    }
+  }
+}
