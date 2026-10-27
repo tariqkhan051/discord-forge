@@ -1,34 +1,29 @@
 # Guardians Guild — Community Rules
 
-Welcome to **Guardians Guild**. Play together, share clips, and keep the vibe competitive but respectful.
+Matches the pinned message in `#📜・rules`.
 
 ## Rules
 
-1. **Respect** — Treat members with respect. No harassment, hate speech, discrimination, or personal attacks.
-2. **No spam** — No repeated messages, scam links, malware, or phishing.
-3. **No cheating or scams** — No cheats, hacks, account selling, credential phishing, or boosting scams.
-4. **Self-promotion** — No unauthorized ads. Share your content in `#share-your-content` and follow staff guidance. Staff may remove spammy promo.
-5. **No toxicity in games** — Argue drafts, not people. No flaming teammates in chat or voice.
-6. **Privacy** — Do not share personal information (yours or others’). No doxxing.
-7. **Discord ToS** — Follow [Discord Terms](https://discord.com/terms) and staff instructions.
+1. **Respect everyone** — no racism, hate speech, or harassment.
+2. **English only** (light Urdu allowed).
+3. **No spam, NSFW, or self-promotion.**
+4. **Use correct channels & tags.**
+5. **Gender verification is mandatory** — no faking.
+6. **Listen to** Admins & Moderators.
+7. **Report suspicious users** to mods via `!report` or `/report`.
 
-## Channel etiquette
+Stay true, stay cool, and protect the Guild!
 
-- Use game channels for that game (MLBB / CS2 / Marvel Rivals).
-- Put LFG posts in looking-for-squad / team-up channels with game, mode, rank, and region.
-- Keep `#announcements` and `#youtube-updates` clean — react and discuss in the right chat channels.
+## Reporting
 
-## Moderation escalation
+```
+!report @user reason here
+!report reason here
+/report details:... [user: optional]
+```
 
-| Step | Action |
-| --- | --- |
-| 1 | Warning |
-| 2 | Timeout |
-| 3 | Kick |
-| 4 | Ban |
+Reports go to `#📄・mod-logs` for staff.
 
-Severe violations (scams, hate, threats) may skip steps. Staff decisions stand; appeal calmly in a ticket/DM to staff if available.
+## Escalation
 
-## Staff
-
-Ping Moderators for urgent issues. Do not ping Admins for routine questions.
+warn → timeout → kick → ban (staff may skip steps for severe cases).

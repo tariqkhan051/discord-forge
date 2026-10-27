@@ -13,6 +13,7 @@ import { registerCommands } from "./features/commands/index.js";
 import { registerVerification } from "./features/verification.js";
 import { registerSetupPanels } from "./features/setup-panels.js";
 import { registerAutomod } from "./features/automod.js";
+import { registerReportPrefix } from "./features/report.js";
 
 function buildIntents(): BitFieldResolvable<GatewayIntentsString, number> {
   const intents: GatewayIntentBits[] = [
@@ -48,12 +49,13 @@ async function main(): Promise<void> {
   registerVerification(client);
   registerSetupPanels(client);
   registerAutomod(client);
+  registerReportPrefix(client);
 
   client.once("clientReady", (c) => {
     console.log(`Logged in as ${c.user.tag}`);
     console.log(`Guild target: ${config.guildId}`);
     console.log(
-      `Features — welcome:${config.enableWelcome} youtube:${config.enableYoutube} modLog:${config.enableModLog} autoRole:${config.enableAutoRole}`,
+      `Features — welcome:${config.enableWelcome} youtube:${config.enableYoutube} modLog:${config.enableModLog} autoRole:${config.enableAutoRole} msgContent:${config.enableMessageContentIntent}`,
     );
   });
 

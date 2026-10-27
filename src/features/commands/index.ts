@@ -11,49 +11,40 @@ import {
 import { config } from "../../lib/config.js";
 import { loadBlueprint } from "../../lib/blueprint.js";
 import { findChannel, findRole } from "../../lib/discord-client.js";
+import { RULES_TEXT } from "../../lib/rules-text.js";
+import { handleReportSlash, reportSlashData } from "../report.js";
 
 export const commandData = [
-  new SlashCommandBuilder().setName("ping").setDescription("Check bot latency"),
-  new SlashCommandBuilder().setName("rules").setDescription("Show community rules"),
-  new SlashCommandBuilder()
-    .setName("roles")
-    .setDescription("Open the self-assignable game roles panel"),
-  new SlashCommandBuilder()
-    .setName("squad")
-    .setDescription("Post a looking-for-squad call")
-    .addStringOption((o) =>
-      o.setName("game").setDescription("Game name").setRequired(true).addChoices(
-        { name: "MLBB", value: "MLBB" },
-        { name: "CS2", value: "CS2" },
-        { name: "Marvel Rivals", value: "Marvel Rivals" },
-        { name: "Other", value: "Other" },
+  ...[
+    new SlashCommandBuilder().setName("ping").setDescription("Check bot latency"),
+    new SlashCommandBuilder().setName("rules").setDescription("Show community rules"),
+    new SlashCommandBuilder()
+      .setName("roles")
+      .setDescription("Open the self-assignable game roles panel"),
+    new SlashCommandBuilder()
+      .setName("squad")
+      .setDescription("Post a looking-for-squad call")
+      .addStringOption((o) =>
+        o.setName("game").setDescription("Game name").setRequired(true).addChoices(
+          { name: "MLBB", value: "MLBB" },
+          { name: "CS2", value: "CS2" },
+          { name: "Marvel Rivals", value: "Marvel Rivals" },
+          { name: "Other", value: "Other" },
+        ),
+      )
+      .addStringOption((o) =>
+        o.setName("details").setDescription("Rank, role, region, party size").setRequired(true),
       ),
-    )
-    .addStringOption((o) =>
-      o.setName("details").setDescription("Rank, role, region, party size").setRequired(true),
-    ),
-  new SlashCommandBuilder()
-    .setName("suggest")
-    .setDescription("Suggest a video idea for Guardians Guild")
-    .addStringOption((o) =>
-      o.setName("idea").setDescription("Your video suggestion").setRequired(true),
-    ),
-  new SlashCommandBuilder().setName("server-info").setDescription("Show server info"),
-].map((c) => c.toJSON());
-
-const RULES_TEXT = [
-  "**Guardians Guild — Rules**",
-  "",
-  "1. Be respectful — no harassment, hate speech, or discrimination.",
-  "2. No spam, scams, or malicious links.",
-  "3. No cheating, account selling, or boosting scams.",
-  "4. No unauthorized self-promotion (use share-your-content when allowed).",
-  "5. Keep gaming sessions chill — no toxicity in chat or voice.",
-  "6. Do not share personal or private information.",
-  "7. Follow Discord ToS and staff directions.",
-  "",
-  "**Escalation:** warn → timeout → kick → ban (staff discretion for severe cases).",
-].join("\n");
+    new SlashCommandBuilder()
+      .setName("suggest")
+      .setDescription("Suggest a video idea for Guardians Guild")
+      .addStringOption((o) =>
+        o.setName("idea").setDescription("Your video suggestion").setRequired(true),
+      ),
+    new SlashCommandBuilder().setName("server-info").setDescription("Show server info"),
+  ].map((c) => c.toJSON()),
+  reportSlashData,
+];
 
 async function handleRoles(interaction: ChatInputCommandInteraction): Promise<void> {
   const blueprint = loadBlueprint();
@@ -135,6 +126,10 @@ export function registerCommands(client: Client): void {
         }
         case "rules": {
           await interaction.reply({ content: RULES_TEXT, ephemeral: true });
+          break;
+        }
+        case "report": {
+          await handleReportSlash(interaction);
           break;
         }
         case "roles": {
